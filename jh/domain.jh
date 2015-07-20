@@ -1,0 +1,38 @@
+entity Line {
+	line String required,
+	description String,
+	author String,
+	from String,
+	addDate DateTime
+}
+
+entity Tag{
+	name String
+}
+
+entity Music{
+	name String required,
+	description String,
+	link String,
+	addDate DateTime
+}
+
+entity User{
+	
+}
+
+relationship OneToMany{
+	User to Line
+}
+
+relationship OneToMany{
+	User to Music
+}
+
+relationship ManyToMany{
+	Line to Tag
+}
+
+relationship ManyToMany{
+	Music to Tag
+}
