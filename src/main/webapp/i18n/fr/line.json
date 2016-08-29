@@ -1,0 +1,26 @@
+{
+    "wliiaApp": {
+        "line" : {
+            "home": {
+                "title": "Lines",
+                "createLabel": "Créer un nouveau Line",
+                "createOrEditLabel": "Créer ou éditer un Line",
+                "search": "Recherche pour Line"
+            },
+            "created": "Un nouveau Line a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Line avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Line avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Line {{ id }} ?"
+            },
+            "detail": {
+                "title": "Line"
+            },
+            "line": "Line",
+            "description": "Description",
+            "author": "Author",
+            "from": "From",
+            "addDate": "Add Date"
+        }
+    }
+}

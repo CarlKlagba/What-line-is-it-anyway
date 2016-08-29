@@ -1,0 +1,66 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myLineLabel" translate="wliiaApp.line.home.createOrEditLabel">Create or edit a Line</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.line.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.line.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="wliiaApp.line.line" for="field_line">Line</label>
+            <input type="text" class="form-control" name="line" id="field_line"
+                    ng-model="vm.line.line"
+                    required />
+            <div ng-show="editForm.line.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.line.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="wliiaApp.line.description" for="field_description">Description</label>
+            <input type="text" class="form-control" name="description" id="field_description"
+                    ng-model="vm.line.description"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="wliiaApp.line.author" for="field_author">Author</label>
+            <input type="text" class="form-control" name="author" id="field_author"
+                    ng-model="vm.line.author"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="wliiaApp.line.from" for="field_from">From</label>
+            <input type="text" class="form-control" name="from" id="field_from"
+                    ng-model="vm.line.from"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="wliiaApp.line.addDate" for="field_addDate">Add Date</label>
+                <div class="input-group">
+                    <input id="field_addDate" type="text" class="form-control" name="addDate" datetime-picker="{{dateformat}}" ng-model="vm.line.addDate" is-open="vm.datePickerOpenStatus.addDate"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('addDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

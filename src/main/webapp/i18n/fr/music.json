@@ -1,0 +1,25 @@
+{
+    "wliiaApp": {
+        "music" : {
+            "home": {
+                "title": "Music",
+                "createLabel": "Créer un nouveau Music",
+                "createOrEditLabel": "Créer ou éditer un Music",
+                "search": "Recherche pour Music"
+            },
+            "created": "Un nouveau Music a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Music avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Music avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Music {{ id }} ?"
+            },
+            "detail": {
+                "title": "Music"
+            },
+            "name": "Name",
+            "description": "Description",
+            "link": "Link",
+            "addDate": "Add Date"
+        }
+    }
+}

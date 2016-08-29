@@ -1,0 +1,17 @@
+version: '2'
+services:
+    wliia-mongodb:
+        container_name: wliia-mongodb
+        image: mongo:3.3.5
+        ports:
+            - "27017:27017"
+        command: mongos --configdb wliia-mongodb-config
+    wliia-mongodb-node:
+        build:
+            context: .
+            dockerfile: mongodb/MongoDB.Dockerfile
+        command: mongod --replSet rs1 --noprealloc --smallfiles
+    wliia-mongodb-config:
+        image: mongo:3.3.5
+        container_name: wliia-mongodb-config
+        command: mongod --noprealloc --smallfiles --configsvr --dbpath /data/db
